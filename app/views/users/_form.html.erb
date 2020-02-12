@@ -20,6 +20,9 @@
   <%= form.label :password %>
   <%= form.password_field :password %> <br>
 
+  <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+  <%= form.file_field :avatar %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
