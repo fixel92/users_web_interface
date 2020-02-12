@@ -13,3 +13,63 @@
  *= require_tree .
  *= require_self
  */
+
+$border-radius-color: #d0d0d0;
+
+body {overflow-x: hidden;}
+a {
+  text-decoration: none !important;
+  color: #3c5e5e;
+}
+a:hover {
+  text-decoration: none !important;
+  color: #234040;
+}
+header {
+  background-color: rgba(1, 20, 87, 0.67);
+}
+h1 {
+  font-size: 1.8rem;
+}
+#users-list {
+  margin-top: 2rem;
+  padding: 0 .5rem;
+  border: 1px solid $border-radius-color;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: 10px 10px 31px -25px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 31px -25px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 31px -25px rgba(0,0,0,0.75);
+}
+#users-list .user img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+#users-list .user svg {
+  margin: 0 .5rem;
+  font-size: 1.2rem;
+}
+#users-list .user .col-3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center !important;
+}
+#users-form {
+  padding: .8rem;
+  border: 1px solid $border-radius-color;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: 10px 10px 31px -25px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 31px -25px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 31px -25px rgba(0,0,0,0.75);
+}
+#user-info {
+  padding: .8rem;
+  border: 1px solid $border-radius-color;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: 10px 10px 31px -25px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 31px -25px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 31px -25px rgba(0,0,0,0.75);
+}
+#user-info .user-email {
+  border-bottom: 1px solid #bebebe;
+}

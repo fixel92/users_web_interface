@@ -1,29 +1,25 @@
-<%= form_with(model: user, html: { multipart: true }) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<%= form_with(model: user, html: { multipart: true }, id: 'users-form') do |form| %>
+  <%= render partial: 'partials/form_errors', locals: { model: @user } %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: 'form-control' %>
+  </div>
+  <% if current_page?(action: 'new') %>
+    <div class="form-group">
+      <%= form.label :password %>
+      <%= form.password_field :password, class: 'form-control' %>
     </div>
   <% end %>
-
-  <%= form.label :name %>
-  <%= form.text_field :name %> <br>
-
-  <%= form.label :email %>
-  <%= form.email_field :email %> <br>
-
-  <%= form.label :password %>
-  <%= form.password_field :password %> <br>
-
-  <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
-  <%= form.file_field :avatar %>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.label :avatar %>
+    <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+    <%= form.file_field :avatar %>
+  </div>
+  <div class="form-group">
+    <%= form.submit 'Сохранить', class: 'btn btn-primary' %> или <%= link_to 'вернуться', :back %>
   </div>
 <% end %>

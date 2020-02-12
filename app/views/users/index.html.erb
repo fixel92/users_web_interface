@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Users</h1>
-<%= render partial: 'user', collection: @users %>
-<br>
-<%= link_to 'New user', new_user_path %>
+<h1>Пользователи</h1>
+<div id="users-list">
+  <%= render partial: 'user', collection: @users %>
+</div>

@@ -1,3 +1,15 @@
-<p><%= user.name %> | <%= user.email %> | <%= link_to 'Show', user_path(user) %> |
-<%= link_to 'Edit', edit_user_path(user) %> |
-<%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<div class="user mb-3 mt-3 row justify-content-between">
+  <div class="col-12 col-md-auto text-center">
+    <%=link_to( image_tag(user_avatar_min(user)), user_path(user)) %>
+  </div>
+  <div class="col-12 col-md-4 text-center">
+    <%= user.name %>
+  </div>
+  <div class="col-12 col-md-4 text-center"><%= user.email %></div>
+  <div class="col-12 col-md-auto justify-content-end text-center">
+    <%= link_to fa_icon('eye'), user_path(user), title: 'Просмотр' %>
+    <%= link_to fa_icon('edit'), edit_user_path(user), title: 'Редактировать'  %>
+    <%= link_to fa_icon('trash'), user, method: :delete, data: { confirm: 'Вы уверены?' }, title: 'Удалить', class: 'text-danger' %>
+  </div>
+</div>
+<hr>
