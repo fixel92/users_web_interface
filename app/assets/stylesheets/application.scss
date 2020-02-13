@@ -54,15 +54,7 @@ h1 {
   flex-wrap: wrap;
   align-content: center !important;
 }
-#users-form {
-  padding: .8rem;
-  border: 1px solid $border-radius-color;
-  border-radius: 0.3rem;
-  -webkit-box-shadow: 10px 10px 31px -25px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 31px -25px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 31px -25px rgba(0,0,0,0.75);
-}
-#user-info {
+#users-form, #user-info, #new_user  {
   padding: .8rem;
   border: 1px solid $border-radius-color;
   border-radius: 0.3rem;
