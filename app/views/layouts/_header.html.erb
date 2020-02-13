@@ -7,12 +7,14 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between align-content-center" id="navbarNavAltMarkup">
+          <% if policy(User).user_is_admin? %>
           <div class="navbar-nav">
             <%= link_to 'Новый пользователь', new_user_path, class: 'btn btn-outline-light btn-sm', title: 'Новый пользователь' %>
           </div>
           <div class="navbar-nav">
             <%= link_to 'Выйти', destroy_user_session_path, data: { confirm: 'Вы уверены, что хотите выйти?' }, class: 'btn btn-outline-light btn-sm', title: 'Выйти' %>
           </div>
+          <% end %>
         </div>
       </nav>
     </div>

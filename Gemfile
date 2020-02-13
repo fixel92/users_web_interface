@@ -14,6 +14,7 @@ gem 'devise'
 gem 'carrierwave', '~> 2.0'
 gem 'rmagick'
 gem 'pagy', '~> 3.5'
+gem 'pundit'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'

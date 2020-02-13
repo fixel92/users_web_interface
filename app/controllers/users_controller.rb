@@ -3,18 +3,26 @@ class UsersController < ApplicationController
 
   def index
     @pagy, @users = pagy(User.all)
+    authorize User
   end
 
   def new
     @user = User.new
+
+    authorize @user
   end
 
-  def show; end
+  def show
+    authorize @user
+  end
 
-  def edit; end
+  def edit;
+    authorize @user
+  end
 
   def create
     @user = User.new(user_params)
+    authorize @user
 
     respond_to do |format|
       if @user.save
@@ -28,6 +36,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    authorize @user
+
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to root_path, notice: 'User was successfully updated.' }
@@ -40,6 +50,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    authorize @user
+
     @user.destroy
     respond_to do |format|
       format.html { redirect_to root_path, notice: 'User was successfully destroyed.' }
