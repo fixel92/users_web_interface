@@ -17,6 +17,7 @@ gem 'pagy', '~> 3.5'
 gem 'pundit'
 gem 'faker'
 gem 'devise-i18n'
+gem 'fast_jsonapi'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
