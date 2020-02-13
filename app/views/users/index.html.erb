@@ -1,4 +1,5 @@
 <h1>Пользователи</h1>
 <div id="users-list">
   <%= render partial: 'user', collection: @users %>
+  <%== pagy_bootstrap_nav(@pagy) %>
 </div>

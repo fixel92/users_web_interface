@@ -13,6 +13,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'carrierwave', '~> 2.0'
 gem 'rmagick'
+gem 'pagy', '~> 3.5'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
