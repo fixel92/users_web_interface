@@ -79,6 +79,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.9.0)
+      devise (>= 4.7.1)
     erubi (1.9.0)
     faker (2.10.1)
       i18n (>= 1.6, < 2)
@@ -218,6 +220,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   carrierwave (~> 2.0)
   devise
+  devise-i18n
   faker
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)

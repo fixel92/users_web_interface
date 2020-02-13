@@ -1,0 +1,22 @@
+ru:
+  app:
+    name: 'Панель управления'
+  activerecord:
+    models:
+      user: 'Пользователь'
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        password: 'Пароль'
+        avatar: 'Аватар'
+  controllers:
+    users:
+      created: 'Вы создали нового пользователя'
+      updated: 'Вы обновили пользователя'
+      destroyed: 'Вы удалили пользователя'
+  pundit:
+    not_authorized: 'Вы не авторизованы'
+  pagy:
+    next: 'След'
+    prev: 'Пред'

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def user_not_authorized
-    flash[:alert] = 'Access denied'
+    flash[:alert] = t('pundit.not_authorized')
     redirect_to user_session_path
   end
 end
