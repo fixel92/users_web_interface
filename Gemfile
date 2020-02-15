@@ -18,9 +18,9 @@ gem 'pundit'
 gem 'faker'
 gem 'devise-i18n'
 gem 'fast_jsonapi'
+gem 'pg'
 
 group :development, :test do
-  gem 'sqlite3', '~> 1.4'
   gem 'pry'
 end
 
