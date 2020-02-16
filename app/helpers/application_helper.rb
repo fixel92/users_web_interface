@@ -37,4 +37,8 @@ module ApplicationHelper
   def fa_icon(icon_class)
     content_tag 'span', '', class: "fa fa-#{icon_class}"
   end
+
+  def page_is_create_user?
+    params[:action] == 'create' || current_page?(action: 'new')
+  end
 end

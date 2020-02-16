@@ -22,6 +22,7 @@ gem 'pg'
 gem 'devise-jwt'
 gem 'dotenv-rails'
 gem 'rack-cors'
+gem 'russian'
 
 group :development, :test do
   gem 'pry'

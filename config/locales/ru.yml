@@ -1,6 +1,10 @@
 ru:
   app:
     name: 'Панель управления'
+  errors:
+    one: '%{count} ошибка'
+    few: '%{count} ошибки'
+    many: '%{count} ошибок'
   activerecord:
     models:
       user: 'Пользователь'

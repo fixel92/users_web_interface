@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def edit;
+  def edit
     authorize @user
   end
 
@@ -24,28 +24,20 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     authorize @user
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to root_path, notice: I18n.t('controllers.users.created') }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      redirect_to root_path, notice: I18n.t('controllers.users.created')
+    else
+      render :new
     end
   end
 
   def update
     authorize @user
 
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to root_path, notice: I18n.t('controllers.users.updated') }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.update(user_params)
+      redirect_to root_path, notice: I18n.t('controllers.users.updated')
+    else
+      render :edit
     end
   end
 
@@ -53,10 +45,8 @@ class UsersController < ApplicationController
     authorize @user
 
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to root_path, notice: I18n.t('controllers.users.destroyed') }
-      format.json { head :no_content }
-    end
+
+    redirect_to root_path, notice: I18n.t('controllers.users.destroyed')
   end
 
   private

@@ -1,6 +1,9 @@
 <% errors = model.errors %>
   <% if errors.any? %>
   <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     <div class="lead">
       В вашей форме <%= t :errors, count: errors.count %>
     </div>
@@ -9,5 +12,6 @@
         <li><%= message %></li>
       <% end %>
     </ul>
+
   </div>
 <% end %>
