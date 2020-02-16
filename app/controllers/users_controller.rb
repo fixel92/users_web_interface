@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update destroy]
+  before_action :set_user, except: %i[index new create]
+  before_action -> { authorize @user }, except: %i[index new create]
 
   def index
     @pagy, @users = pagy(User.all)
@@ -12,13 +13,9 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def show
-    authorize @user
-  end
+  def show; end
 
-  def edit
-    authorize @user
-  end
+  def edit; end
 
   def create
     @user = User.new(user_params)
