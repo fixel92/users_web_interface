@@ -8,4 +8,8 @@ class Api::V1::BaseController < ApplicationController
     policy = "#{controller_path.classify}Policy"
     policies[record] ||= policy.constantize.new(current_user, record)
   end
+
+  def user_not_authorized
+    render json: { 'error': 'Forbidden', 'status': 403 }
+  end
 end

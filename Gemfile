@@ -19,6 +19,9 @@ gem 'faker'
 gem 'devise-i18n'
 gem 'fast_jsonapi'
 gem 'pg'
+gem 'devise-jwt'
+gem 'dotenv-rails'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'pry'
