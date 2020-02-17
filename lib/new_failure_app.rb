@@ -1,6 +1,6 @@
 class NewFailureApp < Devise::FailureApp
   def respond
-    if request.format == :json || request.path_info == '/unauthenticated'
+    if request.format == :json || params['controller'] == 'api/v1/'
       json_failure
     else
       super
