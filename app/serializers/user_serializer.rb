@@ -1,5 +1,12 @@
 class UserSerializer
   include FastJsonapi::ObjectSerializer
 
-  attribute :name, :avatar, :email
+  attributes :name, :email
+
+  attribute :avatar do |user|
+    {
+      url: user.avatar.url,
+      thumb: user.avatar.thumb.url
+    }
+  end
 end
