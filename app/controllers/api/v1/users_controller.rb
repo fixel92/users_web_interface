@@ -17,7 +17,7 @@ module Api
         if @user.update(user_params)
           render json: UserSerializer.new(@user)
         else
-          render json: { status: 'Error' }
+          render json: { 'error': 'Bad Request', 'status': 400 }
         end
       end
 
