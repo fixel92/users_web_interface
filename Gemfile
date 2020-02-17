@@ -23,6 +23,7 @@ gem 'devise-jwt'
 gem 'dotenv-rails'
 gem 'rack-cors'
 gem 'russian'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'factory_bot_rails'
