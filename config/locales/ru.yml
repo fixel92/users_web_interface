@@ -21,6 +21,3 @@ ru:
       destroyed: 'Вы удалили пользователя'
   pundit:
     not_authorized: 'Вы не авторизованы'
-  pagy:
-    next: 'След'
-    prev: 'Пред'
