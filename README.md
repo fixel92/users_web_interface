@@ -1,24 +1,79 @@
-# README
+# Users Web Interface
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Веб интерфейс для управления пользователями с встроенным API.
 
-Things you may want to cover:
+  - Создание, удаление и редактирование пользователей через веб интерфейс для администратора
+  - Регистрация и редактирование пользователя, получение данных о других пользователях через API
 
-* Ruby version
+#### [DEMO](https://web-users-console.herokuapp.com/)
 
-* System dependencies
+|  |  |
+| ------ | ------ |
+| Email | admin@example.com |
+| Пароль | test_admin |
 
-* Configuration
+### Установка
+```sh
+git clone git@github.com:fixel92/users_web_interface.git
+cd users_web_interface
+bundle
+```
+Создайте файл `.env`.
+Выполните команду:
+```
+rake secret
+```
+Скопируйте полученный секретный ключ в файл `.env`. Это понадобится для подписи токена.
+```
+DEVISE_JWT_SECRET_KEY=*********************************************************
+```
+Создание БД, запуск миграций, наполнение БД первичными данными из файла `db/seeds.rb`
+```
+rails db:setup
+```
+Или
 
-* Database creation
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* Database initialization
+### Управление
+Веб-интерфесом может пользоваться только пользователь с правами администратора.
+После наполнения БД пользователями один из них является администратором.
+Зайти в веб-интерфейс можно введя следующие данные:
 
-* How to run the test suite
+|  |  |
+| ------ | ------ |
+| Email | admin@example.com |
+| Пароль | test_admin |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Деплой на Heroku
+Для успешного сохранения изображений, Вам нужно зарегистрироваться на [AWS](https://aws.amazon.com/).
+Создать там юзера и корзину(busket), для хранения изображений.
+Пропишите переменные окружения в настройках вашего проекта на Heroku:
+| Переменная | Назначение |
+| ------ | ------ |
+| S3_ACCESS_KEY | Ключ доступа юзера на AMAZON S3 |
+| S3_SECRET_KEY | Пароль для доступа к юзеру на AMAZON S3 |
+| S3_BUCKET_NAME | Название корзины на AMAZON S3 |
+| DEVISE_JWT_SECRET_KEY | Секретный ключ для подписи токенов |
 
-* Deployment instructions
+### Зависимости
 
-* ...
+ - Postgresql 10.10
+ - Ruby 2.6.3
+ - ImageMagick
+
+License
+----
+
+MIT
+
+
+**Free Software, Hell Yeah!**
+
+**Thanks**
+
+Thanks to https://dillinger.io/ for README
