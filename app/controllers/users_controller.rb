@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action -> { authorize @user }, except: %i[index new create]
 
   def index
-    @pagy, @users = pagy(User.all)
+    @pagy, @users = pagy(User.all.order(updated_at: :desc))
     authorize User
   end
 
@@ -29,8 +29,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    authorize @user
-
     if @user.update(user_params)
       redirect_to root_path, notice: I18n.t('controllers.users.updated')
     else
@@ -39,8 +37,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    authorize @user
-
     @user.destroy
 
     redirect_to root_path, notice: I18n.t('controllers.users.destroyed')

@@ -1,6 +1,6 @@
 class NewFailureApp < Devise::FailureApp
   def respond
-    if request.format == :json || params['controller'] == 'api/v1/'
+    if request.format == :json || params['controller'].include?('api/v1/')
       json_failure
     else
       super
