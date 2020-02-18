@@ -31,6 +31,9 @@ header {
 h1 {
   font-size: 1.8rem;
 }
+#content {
+  padding: 1.6rem 1.8rem 0 1.8rem;
+}
 #users-list {
   margin-top: 2rem;
   padding: 0 .5rem;
@@ -64,4 +67,13 @@ h1 {
 }
 #user-info .user-email {
   border-bottom: 1px solid #bebebe;
+}
+
+@media screen and (max-width: 600px) {
+  #users-form, #user-info, #new_user, #users-list  {
+    box-shadow: none !important;
+  }
+  #content {
+    padding: .5rem .9rem 0 1.8rem;
+  }
 }

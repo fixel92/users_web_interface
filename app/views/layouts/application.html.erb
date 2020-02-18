@@ -16,7 +16,7 @@
   <body>
   <%= render partial: 'layouts/header' %>
   <div class="row">
-    <div class="container">
+    <div id="content" class="container">
       <% flash.each do |key, value| %>
         <div class="mt-2 <%= flash_class(key) %>">
           <%= value %>
